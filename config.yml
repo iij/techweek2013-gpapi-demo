@@ -1,0 +1,30 @@
+---
+gp_service_code: GP_SERVICE_CODE
+endpoint: https://gp.api.iij.jp
+credentials:
+  access_key: YOUR_ACCESS_KEY
+  secret_key: YOUR_SECRET_KEY
+ssh_public_key:
+  YOUR_SSH_PUBLIC_KEY
+source_vm: CLONING_SOURCE_VM_SERVICE_CODE
+lb:
+  virtual_servers:
+    - name: web
+      protocol: http
+      port: 80
+      pool: web
+      traffic_ip_list:
+        - GIO_TRAFFIC_IP
+    - name: web_ssl
+      protocol: https
+      port: 443
+      pool: web_ssl
+      traffic_ip_list:
+        - GIO_TRAFFIC_IP
+  pools:
+    - name: web
+      port: 80
+      roles: web
+    - name: web_ssl
+      port: 443
+      roles: web

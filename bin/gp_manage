@@ -1,0 +1,8 @@
+#!/usr/bin/env ruby
+
+require 'gp_manage'
+
+STDOUT.sync = true
+STDERR.sync = true
+
+GpManage::CLI.start

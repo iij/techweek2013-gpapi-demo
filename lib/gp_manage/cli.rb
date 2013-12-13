@@ -1,7 +1,7 @@
 require "gp_manage/setting"
 require "thor"
 require "yaml/store"
-require "iijapi"
+require "iij/sakagura"
 
 module GpManage
   class CLIBase < Thor

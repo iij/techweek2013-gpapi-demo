@@ -16,7 +16,7 @@ class Setting
         credential = @config["credentials"]
         opts = { :access_key => credential["access_key"], :secret_key => credential["secret_key"] }
         opts[:endpoint] = @config["endpoint"] if @config["endpoint"]
-        IIJAPI::GP::Client.new(opts)
+        IIJ::Sakagura::GP::Client.new(opts)
       end
   end
 
